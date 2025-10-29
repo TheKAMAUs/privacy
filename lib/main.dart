@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  GoRouter.optionURLReflectsImperativeAPIs = true;
+
+  usePathUrlStrategy();
+
   runApp(MyApp());
 }
 
@@ -1387,16 +1392,7 @@ For questions or issues related to these Terms, contact:
                 color: Colors.white70,
               ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurpleAccent, // button color
-                foregroundColor: Colors.white, // text color
-              ),
-              onPressed: () {
-                GoRouter.of(context).go('/terms');
-              },
-              child: Text("View Terms & Conditions for editors"),
-            ),
+
             SizedBox(height: 20),
           ],
         ),
